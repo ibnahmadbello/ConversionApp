@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ConversionApp</string>
+    <string name="hint_enter_your_name">Enter your name</string>
 </resources>
