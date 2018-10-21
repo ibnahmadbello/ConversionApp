@@ -8,9 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import static com.example.ibnahmad.conversionapp.R.string.welcome_greeting;
 
 public class ConversionActivity extends AppCompatActivity implements ConversionAdapter.RecyclerViewClickListener{
 
@@ -27,7 +25,7 @@ public class ConversionActivity extends AppCompatActivity implements ConversionA
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversion);
         setupArrayList();
-//        setupHello();
+
 
         helloTextView = findViewById(R.id.hello_text_view);
         currencyRecyclerView = findViewById(R.id.recycler_view);
@@ -37,16 +35,20 @@ public class ConversionActivity extends AppCompatActivity implements ConversionA
         currencyRecyclerView.setLayoutManager(layoutManager);
         currencyRecyclerView.setAdapter(conversionAdapter);
 
+        setupHello();
 
     }
 
     private void setupHello(){
-        String receivedText = null;
+        String receivedText;
         Intent receivedIntent = getIntent();
         if (receivedIntent.hasExtra(Intent.EXTRA_TEXT)){
             receivedText = receivedIntent.getStringExtra(Intent.EXTRA_TEXT);
+            helloTextView.setText(getResources().getString(R.string.welcome_greeting, receivedText));
+        } else {
+            return;
         }
-        helloTextView.setText(getResources().getString(R.string.welcome_greeting, receivedText));
+
     }
 
     private void setupArrayList(){
@@ -67,5 +69,10 @@ public class ConversionActivity extends AppCompatActivity implements ConversionA
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra("Position Clicked", clickItemPosition);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

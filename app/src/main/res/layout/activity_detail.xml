@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_size"
         android:gravity="center_horizontal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:text="@tools:sample/lorem" />
 
 </RelativeLayout>

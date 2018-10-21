@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (NamePreference.getStoredName(this) == null){
+        if (NamePreference.isFirstRun(this)){
             setContentView(R.layout.activity_main);
             mNameEditText = findViewById(R.id.enter_name_edit_text);
             mEnterButton = findViewById(R.id.enter_button);
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setupApp(){
         entered_name = mNameEditText.getText().toString().trim();
         NamePreference.setStoredName(this, entered_name);
+        NamePreference.setPrefFirstRun(this, true);
         finish();
         Log.i(TAG, "Entered name is added to preference." + NamePreference.getStoredName(this));
     }
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, ConversionActivity.class);
         intent.putExtra(Intent.EXTRA_TEXT, entered_name);
         startActivity(intent);
+        finish();
     }
 
 
