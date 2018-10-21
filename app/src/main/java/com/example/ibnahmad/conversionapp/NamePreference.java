@@ -6,7 +6,6 @@ import android.preference.PreferenceManager;
 public class NamePreference {
 
     private static final String PREF_NAME = "name";
-    private static final String PREF_FIRST_RUN = "first_run";
 
     public static String getStoredName(Context context){
         return PreferenceManager.getDefaultSharedPreferences(context)
