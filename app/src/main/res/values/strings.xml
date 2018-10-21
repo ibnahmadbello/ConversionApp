@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ConversionApp</string>
     <string name="hint_enter_your_name">Enter your name</string>
+
+    <string name="welcome_greeting">Hello, %s!</string>
+
+    <string name="enter_conversion">Enter</string>
 </resources>
