@@ -5,4 +5,8 @@
     <string name="welcome_greeting">Hello, %s!</string>
 
     <string name="enter_conversion">Enter</string>
+    <string name="instruction">Please Select a currency below to see it equivalent of One (1) BitCoin.</string>
+    <string name="image_description">Currency Image</string>
+
+    <string name="conversion_result">One Bitcoin is equivalent to %.2f %s.</string>
 </resources>

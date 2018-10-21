@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (NamePreference.getStoredName(this).isEmpty()){
+        if (NamePreference.getStoredName(this) == null){
             setContentView(R.layout.activity_main);
             mNameEditText = findViewById(R.id.enter_name_edit_text);
             mEnterButton = findViewById(R.id.enter_button);
@@ -46,10 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
 
     @Override
     public void onClick(View view) {

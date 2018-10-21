@@ -9,7 +9,7 @@ public class NamePreference {
 
     public static String getStoredName(Context context){
         return PreferenceManager.getDefaultSharedPreferences(context)
-                .getString(PREF_NAME, "");
+                .getString(PREF_NAME, null);
     }
 
     public static void setStoredName(Context context, String name){

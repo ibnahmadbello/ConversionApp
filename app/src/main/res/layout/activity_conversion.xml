@@ -4,12 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/layout_margin"
     tools:context=".ConversionActivity">
 
     <TextView
         android:id="@+id/hello_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/layout_margin"
+        tools:text="@tools:sample/lorem"
         />
+
+    <TextView
+        android:id="@+id/instruction_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size"
+        android:gravity="center_horizontal"
+        android:text="@string/instruction"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>
