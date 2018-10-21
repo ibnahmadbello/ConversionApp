@@ -20,16 +20,5 @@ public class NamePreference {
                 .apply();
     }
 
-    public static boolean isFirstRun(Context context){
-        return PreferenceManager.getDefaultSharedPreferences(context)
-                .getBoolean(PREF_FIRST_RUN, false);
-    }
-
-    public static void setPrefFirstRun(Context context, boolean isFirstRun){
-        PreferenceManager.getDefaultSharedPreferences(context)
-                .edit()
-                .putBoolean(PREF_FIRST_RUN, isFirstRun)
-                .apply();
-    }
 
 }
