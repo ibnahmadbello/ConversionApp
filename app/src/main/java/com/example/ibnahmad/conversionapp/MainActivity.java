@@ -1,6 +1,8 @@
 package com.example.ibnahmad.conversionapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,15 +22,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (NamePreference.isFirstRun(this)){
-            setContentView(R.layout.activity_main);
-            mNameEditText = findViewById(R.id.enter_name_edit_text);
-            mEnterButton = findViewById(R.id.enter_button);
+        setContentView(R.layout.activity_main);
+        mNameEditText = findViewById(R.id.enter_name_edit_text);
+        mEnterButton = findViewById(R.id.enter_button);
 
-            mEnterButton.setOnClickListener(this);
-//            setupApp();
-        } else {
+        mEnterButton.setOnClickListener(this);
+
+        SharedPreferences preferences = getSharedPreferences("Activity_PREF", Context.MODE_PRIVATE);
+        if (preferences.getBoolean("First Run", false)){
             startConversionActivity();
+        } else {
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("First Run", true);
+            editor.apply();
         }
 
     }
@@ -36,8 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setupApp(){
         entered_name = mNameEditText.getText().toString().trim();
         NamePreference.setStoredName(this, entered_name);
-        NamePreference.setPrefFirstRun(this, true);
-        finish();
         Log.i(TAG, "Entered name is added to preference." + NamePreference.getStoredName(this));
     }
 

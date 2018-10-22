@@ -9,4 +9,5 @@
     <string name="image_description">Currency Image</string>
 
     <string name="conversion_result">One Bitcoin is equivalent to %.2f %s.</string>
+    <string name="detail_activity">Price Equivalent</string>
 </resources>

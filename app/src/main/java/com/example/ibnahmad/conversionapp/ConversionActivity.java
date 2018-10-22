@@ -40,14 +40,8 @@ public class ConversionActivity extends AppCompatActivity implements ConversionA
     }
 
     private void setupHello(){
-        String receivedText;
-        Intent receivedIntent = getIntent();
-        if (receivedIntent.hasExtra(Intent.EXTRA_TEXT)){
-            receivedText = receivedIntent.getStringExtra(Intent.EXTRA_TEXT);
-            helloTextView.setText(getResources().getString(R.string.welcome_greeting, receivedText));
-        } else {
-            return;
-        }
+        String receivedText = NamePreference.getStoredName(this);
+        helloTextView.setText(getResources().getString(R.string.welcome_greeting, receivedText));
 
     }
 

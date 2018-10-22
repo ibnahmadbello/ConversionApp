@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConversionActivity" />
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" android:parentActivityName=".ConversionActivity"
+            android:label="@string/detail_activity"/>
     </application>
 
 </manifest>
