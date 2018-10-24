@@ -24,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
     ProgressBar progressBar;
     String url, currency, price;
     Intent intent;
+    private static final String BASE_URL = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,43 +71,43 @@ public class DetailActivity extends AppCompatActivity {
     private void getUrl(int currencyClicked){
         switch (currencyClicked){
             case 0:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=NGN&amount=1";
+                url = BASE_URL + "&to=NGN&amount=1";
                 currency = "Nigerian Naira";
                 break;
             case 1:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=USD&amount=1";
+                url = BASE_URL + "&to=USD&amount=1";
                 currency = "United State of American Dollar";
                 break;
             case 2:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=JPY&amount=1";
+                url = BASE_URL + "&to=JPY&amount=1";
                 currency = "Japanese Yen";
                 break;
             case 3:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=NZD&amount=1";
+                url = BASE_URL + "&to=NZD&amount=1";
                 currency = "New Zealand Dollar";
                 break;
             case 4:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=EUR&amount=1";
+                url = BASE_URL + "&to=EUR&amount=1";
                 currency = "Euro";
                 break;
             case 5:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=GBP&amount=1";
+                url = BASE_URL + "&to=GBP&amount=1";
                 currency = "Great Britain Pounds";
                 break;
             case 6:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=RUB&amount=1";
+                url = BASE_URL + "&to=RUB&amount=1";
                 currency = "Russian Ruble";
                 break;
             case 7:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=INR&amount=1";
+                url = BASE_URL + "&to=INR&amount=1";
                 currency = "Indian Rupees";
                 break;
             case 8:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=CAD&amount=1";
+                url = BASE_URL + "&to=CAD&amount=1";
                 currency = "Canadian Dollar";
                 break;
             case 9:
-                url = "https://apiv2.bitcoinaverage.com/convert/global?from=BTC&to=AUD&amount=1";
+                url = BASE_URL + "&to=AUD&amount=1";
                 currency = "Australian Dollar";
                 break;
         }
